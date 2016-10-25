@@ -1,0 +1,12 @@
+prefix=/usr/local/samba
+exec_prefix=/usr/local/samba
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: cli_wrepl
+Description: WINS Replication client library
+Requires: ndr_winsrepl 
+Version: 0.0.1
+Libs: -L${libdir} -lcli_wrepl
+Libs.private: -lsamba-socket -lcli_resolve -levents -lpacket -lreplace 
+Cflags: -I${includedir}  -DHAVE_IMMEDIATE_STRUCTURES=1

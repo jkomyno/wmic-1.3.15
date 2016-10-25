@@ -1,0 +1,11 @@
+prefix=/usr/local/samba
+exec_prefix=/usr/local/samba
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: samba-config
+Description: Reading Samba configuration files
+Version: 0.0.1
+Libs: -L${libdir} -lsamba-config
+Libs.private: -lsamba-util -lreplace -ldynconfig 
+Cflags: -I${includedir}  -DHAVE_IMMEDIATE_STRUCTURES=1

@@ -1,0 +1,12 @@
+prefix=/usr/local/samba
+exec_prefix=/usr/local/samba
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: cli_cldap
+Description: CLDAP client library
+Requires.private: ldb 
+Version: 0.0.1
+Libs: -L${libdir} -lcli_cldap
+Libs.private: -lcli_ldap -lreplace -lsamba-util 
+Cflags: -I${includedir}  -DHAVE_IMMEDIATE_STRUCTURES=1
